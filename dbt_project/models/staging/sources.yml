@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: public
+    tables:
+      - name: raw_stock_prices
+
+models:
+  - name: stg_stock_prices
+    columns:
+      - name: ticker
+        tests:
+          - not_null
+      - name: date
+        tests:
+          - not_null
+      - name: close
+        tests:
+          - not_null
