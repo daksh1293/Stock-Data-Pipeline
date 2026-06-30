@@ -1,19 +1,20 @@
-from datetime import datetime
-from airflow import DAG
-from airflow.providers.standard.operators.python import PythonOperator
-from airflow.providers.standard.operators.bash import BashOperator
+from datetime import datetime, timedelta
 import sys
 
 sys.path.insert(0, "/opt/airflow")
 
-from ingestion.fetch_prices import get_test_symbols, fetch_prices, reshape_to_long, save_raw
+from airflow import DAG
+from airflow.providers.standard.operators.python import PythonOperator
+from airflow.providers.standard.operators.bash import BashOperator
+
+from ingestion.fetch_prices import get_all_symbols, fetch_prices_batched, save_raw
 from loading.load_to_postgres import get_engine, create_raw_table, upsert_prices
 
 
 def run_ingestion():
-    symbols = get_test_symbols(limit=20)
-    data = fetch_prices(symbols)
-    long_df = reshape_to_long(data)
+    symbols = get_all_symbols()
+    print(f"Fetching {len(symbols)} symbols")
+    long_df = fetch_prices_batched(symbols, batch_size=50, delay=2)
     save_raw(long_df)
 
 
@@ -44,6 +45,7 @@ with DAG(
     fetch_and_save = PythonOperator(
         task_id="fetch_and_save_prices",
         python_callable=run_ingestion,
+        execution_timeout=timedelta(minutes=30),
     )
 
     load_to_postgres = PythonOperator(
