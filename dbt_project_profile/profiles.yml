@@ -1,0 +1,12 @@
+dbt_project:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: host.docker.internal
+      user: postgres
+      password: "16da11ks"
+      port: 5432
+      dbname: stock_pipeline
+      schema: public
+      threads: 4

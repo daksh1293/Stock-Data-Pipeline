@@ -2,7 +2,7 @@ import os
 from datetime import date
 from dotenv import load_dotenv
 from sqlalchemy import create_engine, text
-
+import pandas as pd
 load_dotenv()
 
 DB_USER = os.getenv("DB_USER")
@@ -38,6 +38,14 @@ def create_raw_table(engine):
 
 def upsert_prices(df, engine, batch_size=500):
     """Insert price rows, updating on conflict (ticker, date) — safe to rerun."""
+    df = df.copy()
+
+    # Drop rows where price data is entirely missing (non-trading days)
+    df = df.dropna(subset=["open", "high", "low", "close"])
+
+    # Clean volume: coerce to numeric, fill remaining gaps with 0, cast to int
+    df["volume"] = pd.to_numeric(df["volume"], errors="coerce").fillna(0).astype("int64")
+
     records = df.to_dict(orient="records")
 
     insert_sql = text("""
@@ -59,7 +67,6 @@ def upsert_prices(df, engine, batch_size=500):
             conn.execute(insert_sql, batch)
             conn.commit()
             print(f"Upserted rows {i} to {i + len(batch)}")
-
 
 if __name__ == "__main__":
     import pandas as pd
