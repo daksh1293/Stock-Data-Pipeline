@@ -74,42 +74,28 @@ docker compose --env-file .env_airflow up -d
 The pipeline runs daily at midnight. Data updates automatically as long as Docker is running. On first run, trigger the DAG manually to populate the database before viewing the dashboard.
 
 ## Project structure
-Stock prediction pipeline/
-│
+
+```
+Stock-Data-Pipeline/
 ├── ingestion/
-│   ├── fetch_tickers.py      # Downloads the NSE equity list CSV
-│   └── fetch_prices.py       # Fetches price data from yfinance in batches
-│
+│   ├── fetch_tickers.py       # Downloads the NSE equity list CSV
+│   └── fetch_prices.py        # Fetches price data from yfinance in batches
 ├── loading/
-│   └── load_to_postgres.py   # Reads the raw CSV and upserts rows into Postgres
-│
+│   └── load_to_postgres.py    # Reads raw CSV and upserts rows into Postgres
 ├── dbt_project/
 │   ├── models/
 │   │   ├── staging/
-│   │   │   ├── sources.yml          # Tells dbt where the raw table is
-│   │   │   └── stg_stock_prices.sql # Light cleaning of raw data
+│   │   │   ├── sources.yml           # Tells dbt where the raw table is
+│   │   │   └── stg_stock_prices.sql  # Light cleaning of raw data
 │   │   └── marts/
 │   │       └── fct_daily_returns.sql # Window functions: returns, rolling avg
-│   └── dbt_project.yml       # dbt project config (name, paths, settings)
-│
+│   └── dbt_project.yml        # dbt project config
 ├── dags/
-│   └── stock_pipeline_dag.py # The Airflow DAG: defines task order and schedule
-│
+│   └── stock_pipeline_dag.py  # Airflow DAG: task order and schedule
 ├── dashboard/
-│   └── app.py                # Streamlit app: reads from Postgres, renders UI
-│
-├── data/
-│   └── raw/                  # Raw CSV files saved here (gitignored)
-│       └── 2026-06-30/
-│           └── prices.csv
-│
-├── dbt_project_profile/
-│   └── profiles.yml          # dbt's database connection config (for Docker)
-│
-├── Dockerfile                # Extends Airflow image with your Python packages
-├── docker-compose.yaml       # Defines all services (Airflow, Postgres, dashboard)
-├── requirements.txt          # Python packages to install in the Docker image
-├── .env                      # Local DB credentials (gitignored)
-├── .env_airflow              # Airflow UID setting for Docker (gitignored)
-├── .gitignore                # Files excluded from git
-└── README.md                 # Project documentation
+│   └── app.py                 # Streamlit dashboard
+├── Dockerfile                 # Extends Airflow image with project dependencies
+├── docker-compose.yaml        # All services: Airflow, Postgres, dashboard
+├── requirements.txt           # Python packages for Docker image
+└── README.md
+```
