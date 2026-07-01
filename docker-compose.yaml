@@ -341,5 +341,19 @@ services:
       airflow-init:
         condition: service_completed_successfully
 
+  dashboard:
+    build: .
+    entrypoint: ["streamlit", "run", "/opt/airflow/dashboard/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+    ports:
+      - "8501:8501"
+    environment:
+      DB_USER: postgres
+      DB_PASSWORD: "16da11ks"
+      DB_HOST: host.docker.internal
+      DB_PORT: 5432
+      DB_NAME: stock_pipeline
+    volumes:
+      - ${AIRFLOW_PROJ_DIR:-.}/dashboard:/opt/airflow/dashboard
+
 volumes:
   postgres-db-volume:
