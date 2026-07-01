@@ -1,0 +1,41 @@
+[0m16:35:04.242726 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020BE501A400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020BE526C1C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020BE5FA4310>]}
+
+
+============================== 16:35:04.290118 | 0d882f15-1f31-4a44-a4db-1f648eac4467 ==============================
+[0m16:35:04.290118 [info ] [MainThread]: Running with dbt=1.10.22
+[0m16:35:04.290118 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'fail_fast': 'False', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'invocation_command': 'dbt init dbt_project', 'version_check': 'True', 'empty': 'None', 'printer_width': '80', 'partial_parse': 'True', 'introspect': 'True', 'log_path': 'logs', 'warn_error': 'None', 'write_json': 'True', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'profiles_dir': 'C:\\Users\\Daksh\\.dbt', 'use_experimental_parser': 'False', 'use_colors': 'True', 'indirect_selection': 'eager'}
+[0m16:35:04.555556 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\Daksh\.dbt
+[0m16:35:04.555556 [info ] [MainThread]: A project called dbt_project already exists here.
+[0m16:35:04.561018 [debug] [MainThread]: Command `dbt init` succeeded at 16:35:04.561018 after 0.41 seconds
+[0m16:35:04.561018 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020BE501A400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020BE526C1C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020BE5F8B3A0>]}
+[0m16:35:04.562767 [debug] [MainThread]: Flushing usage events
+[0m16:35:05.652692 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:38:34.390699 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002596125A430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259621E32E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259621E3040>]}
+
+
+============================== 16:38:34.402960 | 640d4e75-649e-453d-a7de-26f846717203 ==============================
+[0m16:38:34.402960 [info ] [MainThread]: Running with dbt=1.10.22
+[0m16:38:34.402960 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'fail_fast': 'False', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'target_path': 'None', 'version_check': 'True', 'empty': 'None', 'printer_width': '80', 'quiet': 'False', 'introspect': 'True', 'log_path': 'logs', 'warn_error': 'None', 'write_json': 'True', 'partial_parse': 'True', 'log_format': 'default', 'invocation_command': 'dbt init dbt_project', 'static_parser': 'True', 'profiles_dir': 'C:\\Users\\Daksh\\.dbt', 'use_experimental_parser': 'False', 'use_colors': 'True', 'indirect_selection': 'eager'}
+[0m16:38:34.447374 [debug] [MainThread]: Starter project path: C:\Users\Daksh\Desktop\Machine learning\Stock prediction pipeline\venv\lib\site-packages\dbt\include\starter_project
+[0m16:38:34.544768 [info ] [MainThread]: 
+Your new dbt project "dbt_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:38:34.544768 [info ] [MainThread]: Setting up your profile.
+[0m16:40:08.461654 [info ] [MainThread]: Profile dbt_project written to C:\Users\Daksh\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m16:40:08.461654 [debug] [MainThread]: Command `dbt init` succeeded at 16:40:08.461654 after 94.17 seconds
+[0m16:40:08.461654 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002596125A430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002596215C970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259623273D0>]}
+[0m16:40:08.476034 [debug] [MainThread]: Flushing usage events
+[0m16:40:09.589681 [debug] [MainThread]: An error was encountered while trying to flush usage events

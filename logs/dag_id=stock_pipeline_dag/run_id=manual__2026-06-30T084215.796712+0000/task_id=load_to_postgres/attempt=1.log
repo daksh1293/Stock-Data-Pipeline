@@ -1,0 +1,35 @@
+{"timestamp":"2026-06-30T08:48:38.902457Z","level":"info","event":"::group::Pre Execute","logger":"task","filename":"task_runner.py","lineno":1926}
+{"timestamp":"2026-06-30T08:48:39.303896Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","ti_id":"019f17b1-7de0-715e-8419-e0f3c65acb70","task_id":"load_to_postgres","map_index":-1,"run_id":"manual__2026-06-30T08:42:15.796712+00:00","dag_id":"stock_pipeline_dag","try_number":1,"logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":209}
+{"timestamp":"2026-06-30T08:48:39.306529Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_pipeline_dag.py","ti_id":"019f17b1-7de0-715e-8419-e0f3c65acb70","task_id":"load_to_postgres","map_index":-1,"run_id":"manual__2026-06-30T08:42:15.796712+00:00","dag_id":"stock_pipeline_dag","try_number":1,"logger":"airflow.dag_processing.dagbag.BundleDagBag","filename":"dagbag.py","lineno":469}
+{"timestamp":"2026-06-30T08:48:39.646755Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:39.648125Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:39.649364Z","level":"info","event":"Current task name:load_to_postgres","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:39.650294Z","level":"info","event":"Dag name:stock_pipeline_dag","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:39.647843Z","level":"info","event":"::endgroup::","ti_id":"019f17b1-7de0-715e-8419-e0f3c65acb70","task_id":"load_to_postgres","map_index":-1,"run_id":"manual__2026-06-30T08:42:15.796712+00:00","dag_id":"stock_pipeline_dag","try_number":1,"logger":"task","filename":"task_runner.py","lineno":1727}
+{"timestamp":"2026-06-30T08:48:40.392242Z","level":"info","event":"Upserted rows 0 to 500","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:40.869235Z","level":"info","event":"Upserted rows 500 to 1000","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:41.330977Z","level":"info","event":"Upserted rows 1000 to 1500","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:41.810790Z","level":"info","event":"Upserted rows 1500 to 2000","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:42.269773Z","level":"info","event":"Upserted rows 2000 to 2500","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:42.814212Z","level":"info","event":"Upserted rows 2500 to 3000","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:43.317256Z","level":"info","event":"Upserted rows 3000 to 3500","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:43.811144Z","level":"info","event":"Upserted rows 3500 to 4000","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:44.309797Z","level":"info","event":"Upserted rows 4000 to 4500","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:45.033546Z","level":"info","event":"Upserted rows 4500 to 5000","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:45.547912Z","level":"info","event":"Upserted rows 5000 to 5500","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:45.991522Z","level":"info","event":"Upserted rows 5500 to 6000","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:46.482702Z","level":"info","event":"Upserted rows 6000 to 6500","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:47.012087Z","level":"info","event":"Upserted rows 6500 to 7000","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:47.725333Z","level":"info","event":"Upserted rows 7000 to 7500","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:48.340318Z","level":"info","event":"Upserted rows 7500 to 8000","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:48.908396Z","level":"info","event":"Upserted rows 8000 to 8500","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:49.434400Z","level":"info","event":"Upserted rows 8500 to 9000","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:50.219407Z","level":"info","event":"Upserted rows 9000 to 9500","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:50.732440Z","level":"info","event":"Upserted rows 9500 to 10000","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:50.778711Z","level":"info","event":"Upserted rows 10000 to 10040","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:50.783368Z","level":"info","event":"Done. Returned value was: None","ti_id":"019f17b1-7de0-715e-8419-e0f3c65acb70","task_id":"load_to_postgres","map_index":-1,"run_id":"manual__2026-06-30T08:42:15.796712+00:00","dag_id":"stock_pipeline_dag","try_number":1,"logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":233}
+{"timestamp":"2026-06-30T08:48:50.783780Z","level":"info","event":"::group::Post Execute","ti_id":"019f17b1-7de0-715e-8419-e0f3c65acb70","task_id":"load_to_postgres","map_index":-1,"run_id":"manual__2026-06-30T08:42:15.796712+00:00","dag_id":"stock_pipeline_dag","try_number":1,"logger":"task","filename":"task_runner.py","lineno":1288}
+{"timestamp":"2026-06-30T08:48:50.817110Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:50.818254Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:50.819302Z","level":"info","event":"Task operator:<Task(PythonOperator): load_to_postgres>","logger":"task.stdout"}
+{"timestamp":"2026-06-30T08:48:50.817774Z","level":"info","event":"::endgroup::","ti_id":"019f17b1-7de0-715e-8419-e0f3c65acb70","task_id":"load_to_postgres","map_index":-1,"run_id":"manual__2026-06-30T08:42:15.796712+00:00","dag_id":"stock_pipeline_dag","try_number":1,"logger":"task","filename":"task_runner.py","lineno":1896}
