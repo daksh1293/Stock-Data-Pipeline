@@ -4,4 +4,5 @@ __pycache__/
 .env
 data/raw/
 .vscode/
-*.log
+*.logconfig/airflow.cfg
+"config/airflow.cfg" 
