@@ -2,7 +2,6 @@ import os
 import pandas as pd
 import streamlit as st
 from sqlalchemy import create_engine, text
-import pandas as pd
 
 st.set_page_config(page_title="NSE Stock Pipeline Dashboard", layout="wide")
 
@@ -33,7 +32,7 @@ st.caption("Data is refreshed daily by an automated Airflow pipeline. If you jus
 df = load_data()
 
 if df.empty:
-    st.warning("No data yet. Run the `stock_pipeline_dag` in Airflow to populate the database.")
+    st.warning("No data yet. Run the stock_pipeline_dag in Airflow to populate the database.")
     st.stop()
 
 latest_date = df["date"].max()
@@ -66,7 +65,9 @@ tickers = sorted(df["ticker"].unique())
 default_index = tickers.index("RELIANCE.NS") if "RELIANCE.NS" in tickers else 0
 selected = st.selectbox("Select a ticker", tickers, index=default_index)
 
+ticker_df = df[df["ticker"] == selected].sort_values("date").copy()
 ticker_df["date"] = pd.to_datetime(ticker_df["date"]).dt.date
+
 col3, col4 = st.columns(2)
 with col3:
     st.line_chart(ticker_df.set_index("date")["close"], y_label="Close Price")
